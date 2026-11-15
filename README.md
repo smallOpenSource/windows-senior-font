@@ -1,6 +1,6 @@
 # Noto12pt Font Setup
 
-Windows 10 환경에서 가독성과 접근성을 높이기 위해 시스템 기본 글꼴과 주요 웹 브라우저 글꼴을 **12pt · 굵기 600(SemiBold)** (`Noto Sans` / `Noto Sans KR`)으로 일괄 설정하는 포터블 스크립트입니다.
+시니어 사용자들을 위해 Windows 10/11 환경에서 가독성과 접근성을 높이기 위해 시스템 기본 글꼴과 주요 웹 브라우저 글꼴을 **12pt · 굵기 600(SemiBold)** (`Noto Sans` / `Noto Sans KR`)으로 일괄 설정하는 포터블 스크립트입니다.
 
 ## 주요 기능
 
