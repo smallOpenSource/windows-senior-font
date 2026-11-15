@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Windows 10 글꼴 설정 사용법</title>
+  <style>
+    :root{color-scheme:light;--ink:#152b40;--muted:#40556a;--blue:#1751a2;--line:#cbd8e4;--paper:#fff;--bg:#f1f5f7;--accent:#def0e8}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR SemiBold", "Malgun Gothic", sans-serif;font-size:19px;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}
+    a{color:var(--blue);text-underline-offset:.18em}
+    a:focus-visible{outline:4px solid #f2b51c;outline-offset:4px}
+    .page{max-width:1050px;margin:auto;padding:32px 24px 76px}
+    .hero{background:#102f4a;color:#fff;border-radius:20px;padding:42px 48px;margin-bottom:22px}
+    .eyebrow{display:inline-block;color:#cce6ff;font-size:14px;font-weight:700;letter-spacing:.09em}
+    h1{font-size:clamp(32px,5vw,48px);line-height:1.25;margin:12px 0 14px;letter-spacing:-.04em}
+    .lead{max-width:740px;margin:0;color:#eef6fc;font-size:21px;line-height:1.65}
+    .hero-info{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .tag{background:#294a65;border:1px solid #638097;border-radius:999px;padding:5px 14px;font-size:15px;font-weight:700}
+    .panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:34px 38px;margin-top:18px;box-shadow:0 4px 14px rgba(16,47,74,.035)}
+    .section-label{color:var(--blue);font-weight:800;letter-spacing:.04em;font-size:14px}
+    h2{font-size:29px;line-height:1.3;letter-spacing:-.035em;margin:6px 0 18px}
+    h3{font-size:21px;line-height:1.4;margin:0 0 4px}
+    p{margin:0 0 13px}
+    p:last-child{margin-bottom:0}
+    .steps{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:22px}
+    .step{display:grid;grid-template-columns:48px 1fr;gap:17px;align-items:start}
+    .number{display:grid;place-items:center;width:44px;height:44px;background:#e4effb;color:#16498b;border-radius:50%;font-weight:800;font-size:21px}
+    .step p{color:var(--muted);margin:0}
+    .file{font-family:Consolas,"Courier New",monospace;font-size:.88em;overflow-wrap:anywhere;background:#eaf0f5;border-radius:5px;padding:2px 6px;color:#163450}
+    .download{display:inline-block;margin-top:20px;padding:12px 20px;background:#1751a2;border-radius:10px;color:#fff;font-weight:700;text-decoration:none}
+    .download:hover{background:#103c7b}
+    .download-note{display:block;color:var(--muted);font-size:15px;margin-top:8px}
+    .note{border-left:5px solid #2b7a54;background:#edf8f1;padding:16px 19px;border-radius:0 10px 10px 0;margin-top:22px}
+    .note strong{color:#175b39}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .grid .panel{margin:0}
+    .muted{color:var(--muted)}
+    table{border-collapse:collapse;width:100%;margin:14px 0 6px;text-align:left}
+    th,td{border-bottom:1px solid var(--line);padding:10px 9px}
+    th{font-size:16px;color:var(--muted);font-weight:700}
+    td:last-child,th:last-child{text-align:right}
+    tbody tr:last-child td{border-bottom:0}
+    .small{font-size:17px;color:var(--muted)}
+    .highlight{font-weight:800;color:#16498b}
+    .plain-list{padding-left:1.3em;margin:12px 0 0}
+    .plain-list li+li{margin-top:9px}
+    .command{display:block;margin:15px 0;padding:14px 17px;border-radius:9px;background:#edf2f7;color:#132f49;font-family:Consolas,"Courier New",monospace;font-size:18px;word-break:break-all}
+    .backup{font-family:Consolas,"Courier New",monospace;font-size:15px;overflow-wrap:anywhere;color:#28445d}
+    footer{margin-top:26px;padding:0 6px;color:var(--muted);font-size:15px}
+    @media(max-width:720px){body{font-size:18px}.page{padding:14px 14px 48px}.hero{padding:30px 24px;border-radius:15px}.lead{font-size:19px}.panel{padding:25px 22px;border-radius:14px}.grid{grid-template-columns:1fr}.step{grid-template-columns:40px 1fr;gap:12px}.number{width:38px;height:38px;font-size:19px}h2{font-size:25px}}
+    @media print{body{background:#fff;font-size:11pt}.page{max-width:none;padding:0}.hero{background:#fff;color:#152b40;border:2px solid #152b40;border-radius:0;padding:18px 22px}.eyebrow,.lead{color:#152b40}.tag{color:#152b40;background:#fff;border-color:#748697}.panel{box-shadow:none;border:1px solid #9baab7;border-radius:0;padding:18px;margin-top:10px;break-inside:avoid}.grid{gap:10px;margin-top:10px}.download{display:none}.download-note{color:#40556a}.note{background:#fff;border-color:#175b39}.command,.file{background:#eee}.hero-info{margin-top:10px}footer{margin-top:12px}@page{size:A4;margin:14mm}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <span class="eyebrow">WINDOWS 10 · 글꼴 설정</span>
+      <h1>글자를 크고 굵게</h1>
+      <p class="lead">설정 파일 하나로 메뉴와 아이콘의 글자를 읽기 쉽게 바꿉니다. 현재 화면 배율에 맞춰 글자 크기를 계산합니다.</p>
+      <div class="hero-info" aria-label="설정 요약">
+        <span class="tag">글자 크기 12pt</span>
+        <span class="tag">굵기 600</span>
+        <span class="tag">인터넷 불필요</span>
+      </div>
+    </header>
+
+    <section class="panel" aria-labelledby="start-title">
+      <span class="section-label">시작하기</span>
+      <h2 id="start-title">세 단계로 설정하세요</h2>
+      <p class="muted">설정할 PC에서 글꼴을 사용할 계정으로 로그인한 뒤 진행합니다.</p>
+      <ol class="steps">
+        <li class="step"><span class="number" aria-hidden="true">1</span><div><h3>설정 파일을 PC에 복사합니다</h3><p><span class="file">Noto12pt-Font-Setup.cmd</span> 파일 하나만 복사하면 됩니다. 필요한 글꼴이 파일 안에 들어 있습니다.</p></div></li>
+        <li class="step"><span class="number" aria-hidden="true">2</span><div><h3>파일을 더블클릭합니다</h3><p>처음 글꼴을 설치할 때 관리자 권한 확인 창이 나타날 수 있습니다. 확인 후 작업이 진행됩니다.</p></div></li>
+        <li class="step"><span class="number" aria-hidden="true">3</span><div><h3>완료 메시지를 확인합니다</h3><p>검은 창에 Windows 글꼴과 브라우저 처리 결과가 표시됩니다. 내용을 확인한 뒤 아무 키나 누르면 창이 닫힙니다.</p></div></li>
+      </ol>
+      <a class="download" href="Noto12pt-Font-Setup.cmd" download>설정 CMD 파일 받기</a>
+      <span class="download-note">이 버튼은 사용법 HTML과 CMD 파일이 같은 폴더에 있을 때 사용할 수 있습니다.</span>
+      <div class="note"><strong>브라우저가 열려 있나요?</strong><br>Chrome이나 Edge를 강제로 종료하지 않습니다. 모든 창과 프로세스가 완전히 종료되면 현재 로그인 중에 자동으로 기본 글꼴을 적용합니다.</div>
+    </section>
+
+    <div class="grid">
+      <section class="panel" aria-labelledby="changes-title">
+        <span class="section-label">적용 내용</span>
+        <h2 id="changes-title">어디에 적용되나요?</h2>
+        <ul class="plain-list">
+          <li><strong>Windows 메뉴·아이콘 등:</strong> Noto Sans KR SemiBold, 12pt, 굵기 600</li>
+          <li><strong>Chrome·Edge 기본 글꼴:</strong> 한글은 Noto Sans KR, 영문·숫자는 Noto Sans SemiBold</li>
+        </ul>
+        <p class="small" style="margin-top:16px">프로그램이나 웹사이트가 자체 글꼴을 지정한 경우에는 해당 설정을 따릅니다. 실행 중인 앱은 다시 열어야 변경이 보일 수 있습니다.</p>
+      </section>
+      <section class="panel" aria-labelledby="scale-title">
+        <span class="section-label">화면 배율</span>
+        <h2 id="scale-title">크기는 자동 계산됩니다</h2>
+        <p class="muted">화면 배율은 그대로 두고, 12pt에 맞는 글꼴 높이를 계산합니다.</p>
+        <table>
+          <thead><tr><th scope="col">시스템 화면 배율</th><th scope="col">글꼴 높이 설정</th></tr></thead>
+          <tbody><tr><td>100%</td><td>16px</td></tr><tr><td>125%</td><td class="highlight">20px</td></tr><tr><td>150%</td><td class="highlight">24px</td></tr><tr><td>200%</td><td>32px</td></tr></tbody>
+        </table>
+        <p class="small">여러 화면을 쓰는 경우 시스템 DPI를 기준으로 계산합니다.</p>
+      </section>
+    </div>
+
+    <section class="panel" aria-labelledby="restore-title">
+      <span class="section-label">되돌리기</span>
+      <h2 id="restore-title">이전 글꼴로 복원하기</h2>
+      <ol class="plain-list">
+        <li>Chrome과 Edge를 완전히 종료합니다.</li>
+        <li>CMD 파일이 있는 폴더를 열고, 파일 탐색기 주소 표시줄에 <span class="file">cmd</span>를 입력한 뒤 Enter를 누릅니다.</li>
+        <li>열린 창에 아래 명령을 입력하고 Enter를 누릅니다.</li>
+      </ol>
+      <code class="command">Noto12pt-Font-Setup.cmd /restore</code>
+      <p class="muted">실행 전 설정으로 되돌립니다. 설치된 Noto 글꼴 파일은 다른 사용자도 사용할 수 있도록 유지됩니다.</p>
+      <p class="small">첫 설정 전 백업은 다시 실행해도 보존됩니다. 백업 위치:</p>
+      <p class="backup">%LOCALAPPDATA%\Local-PC-Management\Noto12pt\backup</p>
+    </section>
+
+    <section class="panel" aria-labelledby="help-title">
+      <span class="section-label">문제가 있을 때</span>
+      <h2 id="help-title">이렇게 확인하세요</h2>
+      <ul class="plain-list">
+        <li><strong>변경이 보이지 않으면:</strong> 해당 프로그램을 다시 열어 확인합니다. 자체 글꼴을 쓰는 화면은 따로 설정해야 할 수 있습니다.</li>
+        <li><strong>브라우저가 열린 채 로그아웃했다면:</strong> 다시 로그인한 뒤 CMD 파일을 재실행합니다.</li>
+        <li><strong>설정 없이 파일만 확인하려면:</strong> 명령 프롬프트에서 아래 명령을 실행합니다.</li>
+      </ul>
+      <code class="command">Noto12pt-Font-Setup.cmd /check</code>
+    </section>
+    <footer>Windows 10 1803·22H2에서 125%·150% 배율로 확인했습니다. 브라우저 설정은 격리된 시험 프로필로 검증했습니다.</footer>
+  </main>
+</body>
+</html>
